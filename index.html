@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ainur | Student Portfolio</title>
+  <title>Tengku Syed Muhammad Portfolio</title>
 
   <style>
     * {
@@ -24,14 +24,14 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 100;
     }
 
     nav h2 {
-      color: #0b66c3;
+      color: #0b63ce;
     }
 
     nav ul {
@@ -40,49 +40,51 @@
       gap: 25px;
     }
 
-    nav a {
+    nav ul li a {
       text-decoration: none;
       color: #1f2937;
       font-weight: bold;
     }
 
-    nav a:hover {
-      color: #0b66c3;
+    nav ul li a:hover {
+      color: #0b63ce;
     }
 
     .hero {
-      min-height: 85vh;
+      min-height: 90vh;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 60px 8%;
+      padding: 50px 8%;
+      background: linear-gradient(135deg, #eaf4ff, #ffffff);
       gap: 40px;
-      background: linear-gradient(135deg, #e8f3ff, #ffffff);
     }
 
     .hero-text {
-      max-width: 550px;
+      max-width: 600px;
     }
 
     .hero-text h1 {
-      font-size: 48px;
-      color: #0b66c3;
+      font-size: 45px;
+      color: #0b63ce;
       margin-bottom: 15px;
     }
 
     .hero-text h3 {
       font-size: 24px;
       margin-bottom: 20px;
+      color: #2563eb;
     }
 
     .hero-text p {
-      line-height: 1.7;
+      font-size: 18px;
+      line-height: 1.6;
       margin-bottom: 25px;
     }
 
     .btn {
       display: inline-block;
-      background: #0b66c3;
+      background: #0b63ce;
       color: white;
       padding: 12px 25px;
       border-radius: 30px;
@@ -90,16 +92,21 @@
       font-weight: bold;
     }
 
-    .profile-card {
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
+    .btn:hover {
+      background: #084fa8;
+    }
+
+    .profile-placeholder {
+      width: 280px;
+      height: 280px;
       background: white;
-      border: 8px solid #0b66c3;
+      border: 5px solid #0b63ce;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 80px;
+      color: #0b63ce;
+      font-size: 70px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     }
 
@@ -107,25 +114,23 @@
       padding: 70px 8%;
     }
 
-    .title {
+    .section-title {
       text-align: center;
       font-size: 32px;
-      color: #0b66c3;
       margin-bottom: 40px;
+      color: #0b63ce;
     }
 
-    .about-box {
+    .about-card {
       background: white;
       padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
       line-height: 1.8;
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
+      font-size: 17px;
     }
 
-    .cards {
+    .info-grid, .skills-grid, .contact-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 25px;
@@ -133,10 +138,10 @@
 
     .card {
       background: white;
-      padding: 30px;
-      border-radius: 20px;
+      padding: 25px;
+      border-radius: 18px;
       text-align: center;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
       transition: 0.3s;
     }
 
@@ -150,35 +155,16 @@
     }
 
     .card h3 {
-      color: #0b66c3;
+      color: #0b63ce;
       margin-bottom: 10px;
     }
 
-    .contact {
-      background: #0b66c3;
-      color: white;
-      text-align: center;
-    }
-
-    .contact .title {
-      color: white;
-    }
-
-    .contact-box {
-      background: white;
-      color: #1f2937;
-      max-width: 600px;
-      margin: auto;
-      padding: 30px;
-      border-radius: 20px;
-      line-height: 2;
-    }
-
     footer {
+      background: #0b63ce;
+      color: white;
       text-align: center;
       padding: 20px;
-      background: #083b73;
-      color: white;
+      margin-top: 40px;
     }
 
     @media (max-width: 768px) {
@@ -188,7 +174,8 @@
       }
 
       nav ul {
-        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
       }
 
       .hero {
@@ -197,12 +184,13 @@
       }
 
       .hero-text h1 {
-        font-size: 38px;
+        font-size: 34px;
       }
 
-      .profile-card {
-        width: 230px;
-        height: 230px;
+      .profile-placeholder {
+        width: 220px;
+        height: 220px;
+        font-size: 55px;
       }
     }
   </style>
@@ -211,115 +199,127 @@
 <body>
 
   <nav>
-    <h2>Ainur Portfolio</h2>
+    <h2>My Portfolio</h2>
     <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#info">Info</a></li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Me</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
-  <section class="hero">
+  <section class="hero" id="home">
     <div class="hero-text">
-      <h1>Hi, I'm Ainur</h1>
-      <h3>Student from SMK SDARY</h3>
+      <h1>Tengku Syed Muhammad</h1>
+      <h3>Future AI Developer</h3>
       <p>
-        I am a motivated student with a dream to become a successful CEO.
-        This portfolio represents my interest, personality, and future ambition
-        as a student who wants to grow in the ICT world.
+        I am a student from SMK Seri Duyong who is interested in technology,
+        artificial intelligence, and digital innovation.
       </p>
-      <a href="#contact" class="btn">Contact Me</a>
+      <a href="#about" class="btn">Explore My Portfolio</a>
     </div>
 
-    <div class="profile-card">
-      👩‍💼
+    <div class="profile-placeholder">
+      👨‍💻
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Student Information</h2>
+    <div class="info-grid">
+      <div class="card">
+        <div class="icon">🏫</div>
+        <h3>School</h3>
+        <p>SMK Seri Duyong</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🚀</div>
+        <h3>Dream Career</h3>
+        <p>AI Developer</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🎮</div>
+        <h3>Hobby</h3>
+        <p>Game</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🌍</div>
+        <h3>Favourite Subject</h3>
+        <p>Geografi</p>
+      </div>
     </div>
   </section>
 
   <section id="about">
-    <h2 class="title">About Me</h2>
-    <div class="about-box">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-card">
       <p>
-        My name is <b>Ainur</b>. I am a student from <b>SMK SDARY</b>.
-        I enjoy learning new things and improving myself. My dream career is to
-        become a <b>CEO</b>, where I can lead a company, make smart decisions,
-        and inspire others. I also enjoy <b>membaca novel</b> because it helps
-        me gain knowledge, creativity, and new ideas.
+        Hello! My name is Tengku Syed Muhammad. I am a student from SMK Seri
+        Duyong. I enjoy learning new things, especially related to technology
+        and artificial intelligence. My dream is to become an AI Developer in
+        the future. I believe technology can help people solve problems and make
+        life easier.
       </p>
     </div>
   </section>
 
-  <section id="info">
-    <h2 class="title">Personal Information</h2>
-    <div class="cards">
-      <div class="card">
-        <div class="icon">🏫</div>
-        <h3>School</h3>
-        <p>SMK SDARY</p>
-      </div>
-
-      <div class="card">
-        <div class="icon">💼</div>
-        <h3>Dream Career</h3>
-        <p>CEO</p>
-      </div>
-
-      <div class="card">
-        <div class="icon">📚</div>
-        <h3>Hobby</h3>
-        <p>Membaca novel</p>
-      </div>
-
-      <div class="card">
-        <div class="icon">📖</div>
-        <h3>Favourite Subject</h3>
-        <p>Sejarah</p>
-      </div>
-    </div>
-  </section>
-
   <section id="skills">
-    <h2 class="title">My Skills</h2>
-    <div class="cards">
+    <h2 class="section-title">My Skills</h2>
+    <div class="skills-grid">
       <div class="card">
         <div class="icon">💻</div>
-        <h3>ICT Skills</h3>
-        <p>Interested in technology and digital tools.</p>
+        <h3>Basic ICT</h3>
+        <p>Able to use computers and digital tools effectively.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🤖</div>
+        <h3>AI Interest</h3>
+        <p>Interested in artificial intelligence and future technology.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🎯</div>
+        <h3>Problem Solving</h3>
+        <p>Enjoy finding solutions and improving ideas.</p>
       </div>
 
       <div class="card">
         <div class="icon">🗣️</div>
         <h3>Communication</h3>
-        <p>Able to share ideas clearly and confidently.</p>
-      </div>
-
-      <div class="card">
-        <div class="icon">👑</div>
-        <h3>Leadership</h3>
-        <p>Dreaming to become a future CEO and leader.</p>
-      </div>
-
-      <div class="card">
-        <div class="icon">🧠</div>
-        <h3>Creative Thinking</h3>
-        <p>Enjoys reading novels and exploring new ideas.</p>
+        <p>Able to share ideas clearly with others.</p>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="contact">
-    <h2 class="title">Contact Me</h2>
-    <div class="contact-box">
-      <p><b>Name:</b> Ainur sabiela</p>
-      <p><b>School:</b> SMK SDARY</p>
-      <p><b>Email:</b> ainur@example.com</p>
-      <p><b>Message:</b> Thank you for visiting my portfolio!</p>
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <div class="contact-grid">
+      <div class="card">
+        <div class="icon">📧</div>
+        <h3>Email</h3>
+        <p>yourname@email.com</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">📱</div>
+        <h3>Phone</h3>
+        <p>012-3456789</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">📍</div>
+        <h3>Location</h3>
+        <p>Melaka, Malaysia</p>
+      </div>
     </div>
   </section>
 
   <footer>
-    <p>© 2026 Ainur. Student Portfolio Website.</p>
+    <p>© 2026 Tengku Syed Muhammad. All Rights Reserved.</p>
   </footer>
 
 </body>
